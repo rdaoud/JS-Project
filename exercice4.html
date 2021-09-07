@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <button id = "change" onclick = "changeMode()" style="background-color: black; color: white; padding : 5px; float: right; border-radius: 10px; border: white;">Activer le Dark Mode</button>
+        <br>
+        <h1 style="text-align: center;">Accueil</h1>
+        <br> 
+        <div style= "margin: auto; width: 300px;">
+            <p>Bonjour à toi, et bienvenue dans cette page !</p>
+        </div>
+    </body>
+</html>
+
+<script>
+
+    // On créé la fonction qui va permettre à la page de changer de mode (coleur de texte et de fond) que nous avons lié au bouton créé plus haut
+    function changeMode(){
+        //On récupère l'ID du bouton et le body pour changer leur style par la suite
+        let btn = document.getElementById('change');
+        let body =  document.querySelector('body');
+
+        if (body.style.color == "white" && body.style.backgroundColor == "black"){
+            body.style.color = "black";
+            body.style.backgroundColor = "white";
+            btn.style.color = "white";
+            btn.style.backgroundColor = "black";
+            btn.textContent = "Activer le Dark Mode";
+        }
+
+        else {
+            body.style.color ="white";
+            body.style.backgroundColor = "black";
+            btn.style.color = "black";
+            btn.style.backgroundColor = "white";
+            btn.textContent = "Activer le Light Mode";
+        }
+    }
+
+</script>
