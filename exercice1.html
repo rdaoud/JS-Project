@@ -3,7 +3,7 @@
         <h1>Générateur de mot passe</h1>
         <br>
         <!-- On créé le bouton qui va nous générer nos mots de passe -->
-        <button onclick="genererMDP()">Générer votre mot de passe</button>
+        <button onclick="genererMDP()">Générer un mot de passe</button>
         <div id ="mdp">
             <p>Voici un mot de passe : </p>
         </div>
@@ -12,41 +12,41 @@
 
 <script>
 
-// On déclare nos différents caractères sous forme de variables de manière séparée 
-let minuscule = "abcdefghijklmnopqrstuvwxyz";
-let majuscule = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let chiffre = "1234567890";
-let caractere = "`~!@#$%^&*()-_=+[{]}\\|;:'\",<.>/? ";
+    // On déclare nos différents caractères sous forme de variables de manière séparée 
+    let minuscule = "abcdefghijklmnopqrstuvwxyz";
+    let majuscule = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let chiffre = "1234567890";
+    let caractere = "`~!@#$%^&*()-_=+[{]}\\|;:'\",<.>/? ";
 
-// On les concatène dans une variable sous forme de chaîne de caractères
-let mdp = minuscule + majuscule + chiffre + caractere;
+    // On les concatène dans une variable sous forme de chaîne de caractères
+    let mdp = minuscule + majuscule + chiffre + caractere;
 
-// Et on limite le nombre de caractères à 8
-let minimCar = 8;
+    // Et on limite le nombre de caractères à 8
+    let minimCar = 8;
 
-// On créé la fonction qui va nous permettre de générer notre mot de passe 
-function genererMDP(){
-    
-    // Ce bout de code nous permettra de n'afficher qu'un mot de passe par clic au lieu de tous les afficher à la suite 
-    if (document.getElementsByClassName("mdp").length != 0){
-        document.getElementsByClassName("mdp")[0].remove();
+    // On créé la fonction qui va nous permettre de générer notre mot de passe 
+    function genererMDP(){
+        
+        // Ce bout de code nous permettra de n'afficher qu'un mot de passe par clic au lieu de tous les afficher à la suite 
+        if (document.getElementsByClassName("mdp").length != 0){
+            document.getElementsByClassName("mdp")[0].remove();
+        }
+
+        let motDePasse = '';
+
+        // On mélange les caractères jusqu'a que la chaine en atteigne 8
+        for (i=0; i < minimCar; i++){
+            let indice = Math.round(Math.random() * mdp.length);
+            motDePasse += mdp.substring(indice, indice + 1);
+        }
+        
+        // On créé un paragraphe pour mettre le mot de passe obtenu qu'on ajoutera dans la div créé ci-dessus
+        let divMdp = document.getElementById('mdp');
+        let mdpText = document.createElement('p');
+        mdpText.textContent = motDePasse
+        mdpText.classList.add("mdp")
+        divMdp.appendChild(mdpText);
+        
     }
-
-    let motDePasse = '';
-
-    // On mélange les caractères jusqu'a que la chaine en atteigne 8
-    for (i=0; i < minimCar; i++){
-        let indice = Math.round(Math.random() * mdp.length);
-        motDePasse += mdp.substring(indice, indice + 1);
-    }
-    
-    // On créé un paragraphe pour mettre le mot de passe obtenu qu'on ajoutera dans la div créé ci-dessus
-    let divMdp = document.getElementById('mdp');
-    let mdpText = document.createElement('p');
-    mdpText.textContent = motDePasse
-    mdpText.classList.add("mdp")
-    divMdp.appendChild(mdpText);
-    
-}
 
 </script>

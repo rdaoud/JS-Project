@@ -1,7 +1,65 @@
 <html>
-    <body>
+    <meta charset="utf-8"/>
+    <body style = "margin : 0px;">
+        <!-- On créé deux divs pour les deux conversions-->
+        <div style = "display: flex;">
+            <!-- La partir pour convertir en °F -->
+            <div id = "fahrenheit" style = "background-color: yellow; width: 50%; height: 100vh; ">
+                <h1 style="text-align: center;">Convertir en Fahrenheit</h1>
+                <!-- On met un input de type number pour s'assurer que l'utilisateur ne rentre pas de texte -->
+                <input id="convFarenheit" type="number" placeholder="Votre température en °C"/>
+                <!-- Bouton pour effectuer la conversion -->
+                <button type="button" onclick="calculFahrenheit()">Convertir</button>
+            </div>
+            <!-- La partir pour convertir en °C -->
+            <div id = "celsius" style = "background-color: red; width: 50%; height: 100vh;">
+                <h1 style="text-align: center;">Convertir en Celsius</h1>
+                <input id="convCelsius" type="number" placeholder="Votre température en °F"/>
+                <button type="button" onclick="calculCelsius()">Convertir</button>
+            </div>
+        </div>
     </body>
 </html>
-<script>
 
+<script>
+//On créé les deux fonctions pour chaque conversion 
+
+    // La conversion en °F
+    function calculFahrenheit(){
+
+        //Tout comme pour l'exo 1 ce bout de code nous sert à afficher qu'un résultat à la fois
+        if (document.getElementsByClassName("result").length != 0){
+            document.getElementsByClassName("result")[0].remove();
+        }
+
+        // On récupère l'id de la div et de l'input
+        let fahrenheit = document.getElementById('fahrenheit');
+        let convFahrenheit = document.getElementById('convFarenheit');
+
+        // On effectue le calcul
+        let resultat = convFahrenheit.value * 9 / 5 + 32;
+
+        // On créé un élément p qui nous permettra d'afficher le résultat dans la div
+        let resultatConversion = document.createElement('p');
+        resultatConversion.textContent = resultat;
+        resultatConversion.classList.add("result")
+        fahrenheit.appendChild(resultatConversion);
+    }
+
+    // La conversion en °C
+    function calculCelsius(){
+
+        if (document.getElementsByClassName("result").length != 0){
+            document.getElementsByClassName("result")[0].remove();
+        }
+
+        let celsius = document.getElementById('celsius');
+        let convCelsius = document.getElementById('convCelsius');
+        let resultat = (convCelsius.value - 32) * 5 / 9;
+        let resultatConversion = document.createElement('p');
+        resultatConversion.textContent = resultat;
+        resultatConversion.classList.add("result")
+        celsius.appendChild(resultatConversion);
+    }
+    
 </script>

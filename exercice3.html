@@ -9,19 +9,19 @@
 
 <script>
 
-// On créé un tableau de citations
-let citations = ["L'argent ne fait pas le bonheur", "Le temps c'est de l'argent", "Si tu ne peux pas voler, cours. Si tu ne peux courir, marche. Si tu ne peux pas marcher, rampe. Quoi qu'il arrive va de l'avant !"
-, "La fortune souris aux audacieux.", "L'attaque fait gagner des matchs mais la défense fait gagner des titres", "Le sport n'est rien sans le respect", "KFC, so good !", 
-"Sois comme l'eau mon ami", "Un homme qui n'a pas de peur n'a pas de courage", "Ne promets pas lorsque tu es heureux, ne réponds pas lorsque tu es en colère, ne décide pas quand tu es triste."]
+    // On créé un tableau de citations
+    let citations = ["L'argent ne fait pas le bonheur", "Le temps c'est de l'argent", "Si tu ne peux pas voler, cours. Si tu ne peux courir, marche. Si tu ne peux pas marcher, rampe. Quoi qu'il arrive va de l'avant !"
+    , "La fortune souris aux audacieux.", "L'attaque fait gagner des matchs mais la défense fait gagner des titres", "Le sport n'est rien sans le respect", "KFC, so good !", 
+    "Sois comme l'eau mon ami", "Un homme qui n'a pas de peur n'a pas de courage", "Ne promets pas lorsque tu es heureux, ne réponds pas lorsque tu es en colère, ne décide pas quand tu es triste."]
 
-// On créé la fonction qui va nous permettre de tirer au sort une citation présente dans le tableau ci-dessus. 
-function getCitation() {
+    // On créé la fonction qui va nous permettre de tirer au sort une citation présente dans le tableau ci-dessus. 
+    function getCitation() {
 
-    // On récupère un indice du tableau au hasard
-    let citation = Math.round(Math.random() * citations.length);
-    
-    // Puis on l'affiche dans l'alerte en mettant en paramètre le tableau et l'indice tiré au sort
-    alert(citations[citation]);
-}
+        // On récupère un indice du tableau au hasard
+        let citation = Math.round(Math.random() * citations.length);
+        
+        // Puis on l'affiche dans l'alerte en mettant en paramètre le tableau et l'indice tiré au sort
+        alert(citations[citation]);
+    }
 
 </script>
