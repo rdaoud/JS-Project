@@ -1,7 +1,43 @@
 <html>
-    <body>
+    <body style ="margin:0px">
+        <nav style = "background-color: green;">
+            <!-- Bouton Burger qui va nous permettre d'afficher et d'enlever le menu de la page -->
+            <ul>
+                <button style ="border: none; padding: 5px; background-color: grey; margin: 5px; border-radius: 5px;" onclick="affMenu()">
+                    <div style = "background-color: white; width: 25px; height: 3px; margin-bottom: 5px;"></div>
+                    <div style = "background-color: white; width: 25px; height: 3px;  margin-bottom: 5px;"></div>
+                    <div style = "background-color: white; width: 25px; height: 3px;"></div>
+                </button>
+            </ul>
+
+            <!-- Menu caché au départ qu'on affichera au clic du bouton -->
+            <div id="menu" style = "display:none;">
+                <ul>
+                    <li style ="font-weight: bold; color: white; list-style-type: none;">Mon Profil</li>
+                    <li style ="font-weight: bold; color: white; list-style-type: none;">Conversation</li>
+                    <li style ="font-weight: bold; color: white; list-style-type: none;">Paramètres</li>
+                </ul>
+            </div>
+        </nav>
     </body>
 </html>
+
 <script>
+
+    // On créé la fonction qui va nous permettre d'afficher ou non le menu de la page
+    function affMenu(){
+        // On récupère l'ID du menu pour manipuler son affichage grace au style qu'on applique 
+        menu = document.getElementById('menu');
+
+        // Si le menu est visible alors on le fait disparaître 
+        if (menu.style.display == "block"){
+            menu.style.display = "none";
+        }
+
+        // Sinon on le fait apparaître 
+        else {
+            menu.style.display = "block";
+        }
+    }
 
 </script>
