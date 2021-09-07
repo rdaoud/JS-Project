@@ -1,7 +1,24 @@
 <html>
     <body>
+        <h1>Générateur de citations</h1><br>
+
+        <button onclick="getCitation()">Générer une citation</button>
     </body>
 </html>
+
 <script>
+
+let citations = ["L'argent ne fait pas le bonheur", "Le temps c'est de l'argent", "Si tu ne peux pas voler, cours. Si tu ne peux courir, marche. Si tu ne peux pas marcher, rampe. Quoi qu'il arrive va de l'avant !"
+, "La fortune souris aux audacieux.", "L'attaque fait gagner des matchs mais la défense fait gagner des titres", "Le sport n'est rien sans le respect", "KFC, so good !", 
+"Sois comme l'eau mon ami", "Un homme qui n'a pas de peur n'a pas de courage", "Ne promets pas lorsque tu es heureux, ne réponds pas lorsque tu es en colère, ne décide pas quand tu es triste."]
+
+var citation = citations[Math.floor(Math.random() * citations.length)];
+
+function getCitation(){
+        alert(citation);
+    }
+
+    buttonAlert = document.getElementById("alert");
+    buttonAlert.addEventListener('click', getNotify);
 
 </script>
